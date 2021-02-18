@@ -23,6 +23,6 @@ def test_002_edit_work_package():
             }
         }
 
-    work_package = work_packages_api.edit_work_package(38, payload)
+    work_package = work_packages_api.edit_work_package(work_package_id, payload)
 
     assert work_package["description"]["raw"] == new_description, f"Description should be: '{new_description}'"

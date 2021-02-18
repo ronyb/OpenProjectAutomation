@@ -81,9 +81,11 @@ class RestClient:
     @staticmethod
     def __response_to_str(response):
 
+        max_length_for_report = 1200
+
         response_body_str = response.text
-        if len(response_body_str) > 400:
-            response_body_str = response_body_str[0:400] + " ..."
+        if len(response_body_str) > max_length_for_report:
+            response_body_str = response_body_str[:max_length_for_report] + " ..."
 
         return f"RESPONSE: {RestClient.__get_response_status_code_and_description(response)}\n{response_body_str}"
 
@@ -103,3 +105,5 @@ class RestClient:
             return json_str
         elif type(payload) is str:
             return payload
+        else:
+            raise Exception("Payload must be of type dict or str")
