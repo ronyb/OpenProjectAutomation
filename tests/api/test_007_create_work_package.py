@@ -4,7 +4,7 @@ from infra.api.work_packages_api import WorkPackagesApi
 from main_config import config
 
 
-def test_003_create_work_package():
+def test_007_create_work_package():
 
     work_packages_api = WorkPackagesApi(config['base_url'])
 

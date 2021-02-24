@@ -14,14 +14,14 @@ class WorkPackagesApi(RestClient):
         response = self.get(path=f"/api/v3/work_packages/{work_package_id}", expected_response_status_code=expected_response_status_code)
         return response.json()
 
-    # PATCH /api/v3/work_packages/{id}
-    def edit_work_package(self, work_package_id, payload):
-        response = self.patch(path=f"/api/v3/work_packages/{work_package_id}", payload=payload)
-        return response.json()
-
     # POST /api/v3/work_packages
     def create_work_package(self, payload):
         response = self.post(path=f"/api/v3/work_packages", payload=payload, expected_response_status_code=201)
+        return response.json()
+
+    # PATCH /api/v3/work_packages/{id}
+    def edit_work_package(self, work_package_id, payload):
+        response = self.patch(path=f"/api/v3/work_packages/{work_package_id}", payload=payload)
         return response.json()
 
     # DELETE /api/v3/work_packages/{id}

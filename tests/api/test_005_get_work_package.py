@@ -2,7 +2,7 @@ from infra.api.work_packages_api import WorkPackagesApi
 from main_config import config
 
 
-def test_001_get_work_package():
+def test_005_get_work_package():
 
     work_package_id = 38
     expected_work_package_type = "Task"

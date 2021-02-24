@@ -4,7 +4,7 @@ from infra.api.work_packages_api import WorkPackagesApi
 from main_config import config
 
 
-def test_004_delete_work_package():
+def test_008_delete_work_package():
 
     work_packages_api = WorkPackagesApi(config['base_url'])
 

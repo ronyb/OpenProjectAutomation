@@ -1,12 +1,10 @@
-
-
 from datetime import datetime
 
 from infra.api.work_packages_api import WorkPackagesApi
 from main_config import config
 
 
-def test_002_edit_work_package():
+def test_006_edit_work_package():
 
     work_package_id = 38
 
