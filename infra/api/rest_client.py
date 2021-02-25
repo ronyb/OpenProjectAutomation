@@ -95,8 +95,8 @@ class RestClient:
 
     @staticmethod
     def __assert_response_status_code(request_type, request_url, response, expected_response_status_code: int):
-        if expected_response_status_code != -1 and response.status_code != expected_response_status_code:
-            assert False, f"{request_type}: {request_url}\nBad Response: {RestClient.__response_to_str(response)}"
+        if expected_response_status_code != -1:
+            assert response.status_code == expected_response_status_code, f"{request_type}: {request_url}\nBad Response: {RestClient.__response_to_str(response)}"
 
     @staticmethod
     def __payload_to_json_str(payload):
