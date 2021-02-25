@@ -1,7 +1,4 @@
-from datetime import datetime
-
 from infra.api.projects_api import ProjectsApi
-from infra.api.work_packages_api import WorkPackagesApi
 from main_config import config
 
 
