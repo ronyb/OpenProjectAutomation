@@ -16,7 +16,7 @@ class ProjectsApi(RestClient):
 
     # POST /api/v3/projects
     def create_project(self, payload):
-        response = self.post(path=f"/api/v3/projects", payload=payload, expected_response_status_code=201)
+        response = self.post(path=f"/api/v3/projects", payload=payload, expected_response_status_code=HTTPStatus.CREATED)
         return response.json()
 
     # PATCH /api/v3/projects/{id}
@@ -26,4 +26,4 @@ class ProjectsApi(RestClient):
 
     # DELETE /api/v3/projects/{id}
     def delete_project(self, project_id):
-        response = self.delete(path=f"/api/v3/projects/{project_id}", expected_response_status_code=204)
+        response = self.delete(path=f"/api/v3/projects/{project_id}", expected_response_status_code=HTTPStatus.NO_CONTENT)

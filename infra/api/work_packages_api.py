@@ -16,7 +16,7 @@ class WorkPackagesApi(RestClient):
 
     # POST /api/v3/work_packages
     def create_work_package(self, payload):
-        response = self.post(path=f"/api/v3/work_packages", payload=payload, expected_response_status_code=201)
+        response = self.post(path=f"/api/v3/work_packages", payload=payload, expected_response_status_code=HTTPStatus.CREATED)
         return response.json()
 
     # PATCH /api/v3/work_packages/{id}
@@ -26,4 +26,4 @@ class WorkPackagesApi(RestClient):
 
     # DELETE /api/v3/work_packages/{id}
     def delete_work_package(self, work_package_id):
-        response = self.delete(path=f"/api/v3/work_packages/{work_package_id}", expected_response_status_code=204)
+        response = self.delete(path=f"/api/v3/work_packages/{work_package_id}", expected_response_status_code=HTTPStatus.NO_CONTENT)
